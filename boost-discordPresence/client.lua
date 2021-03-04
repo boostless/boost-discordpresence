@@ -3,6 +3,7 @@ local jobGrade = ''
 local job = ''
 local playerName = nil
 local playerLoaded = false
+local firstSpawn = true
 -- ESX Stuff----
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -32,6 +33,15 @@ RegisterNetEvent('discord:client:setPresence')
 AddEventHandler('discord:client:setPresence', function(_playerName)
 	playerName = _playerName
    	SetRichPresence('ID:' .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1))) .. ' | ' .. playerName .. ' | ' ..' '.. Config.PlayerText ..' ' .. #GetActivePlayers() .. '/' .. tostring(Config.PlayerCount))
+end)
+
+AddEventHandler('playerSpawned', function()
+ if firstSpawn then
+    for _, v in pairs(Config.Buttons) do
+          SetDiscordRichPresenceAction(v.index, v.name, v.url)
+    end
+    firstSpawn = false
+ end	
 end)
 
 Citizen.CreateThread(function()
