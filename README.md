@@ -1,11 +1,11 @@
 # boost-discordpresence
 Discord rich presence with included job's
 
-#Dependencies
+# Dependencies
 
 ESX, esx_idenityti, mysql-async,Discord Bot
 
-#Change Log
+# Change Log
 
 * 1.0.0 Initial Release
 * 1.0.1 Added Config File
