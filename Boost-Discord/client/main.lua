@@ -40,7 +40,7 @@ AddEventHandler('Boost-Discord:SetPresence', function(data)
 	--Here you will have to put the image name for the "large" icon.
 	SetDiscordRichPresenceAsset('largeimage')
 	if Config.UseESXIdentity then
-		SetRichPresence((Config.RichPresence):format(GetPlayerServerId(player), data['PlayerName'], Config.PlayerText, data['ActivePlayers'], tostring(Config.PlayerCount)))
+		SetRichPresence((Config.RichPresence):format(GetPlayerServerId(player), data['IdentityName'], Config.PlayerText, data['ActivePlayers'], tostring(Config.PlayerCount)))
 	else
 		SetRichPresence((Config.RichPresence):format(GetPlayerServerId(player), data['PlayerName'], Config.PlayerText, data['ActivePlayers'], tostring(Config.PlayerCount)))
 	end
