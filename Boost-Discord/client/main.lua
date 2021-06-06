@@ -44,7 +44,7 @@ AddEventHandler('Boost-Discord:SetPresence', function(data)
 	else
 		SetRichPresence((Config.RichPresence):format(GetPlayerServerId(player), data['PlayerName'], Config.PlayerText, data['ActivePlayers'], tostring(Config.PlayerCount)))
 	end
-	SetDiscordRichPresenceAssetText('SalsaRP')
+	SetDiscordRichPresenceAssetText('Boost#4383')
 end)
 
 Citizen.CreateThread(function()
