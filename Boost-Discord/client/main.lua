@@ -1,16 +1,8 @@
-ESX = nil
 local jobGrade = ''
 local job = ''
 local playerName = nil
 local playerLoaded = false
 local firstSpawn = true
--- ESX Stuff----
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-end)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
